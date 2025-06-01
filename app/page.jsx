@@ -22,10 +22,10 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="flex gap-4 justify-center mt-8">
+      {/* <div className="flex gap-4 justify-center mt-8">
         <Link href="/cart" className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg font-semibold">ดูตะกร้าสินค้า</Link>
         <Link href="/checkout" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold">ไปชำระเงิน</Link>
-      </div>
+      </div> */}
     </div>
   );
 }
