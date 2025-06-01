@@ -1,9 +1,13 @@
-import Image from "next/image";
+import Navbar from "./components/Navbar";
+import RoomButton from "./components/RoomButton";
+import Search from "./components/Search";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="bg-white container mx-auto">
+      <Navbar/>
+      <RoomButton/>
+      <Search/>
     </div>
   );
 }
