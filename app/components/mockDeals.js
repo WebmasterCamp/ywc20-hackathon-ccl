@@ -3,7 +3,7 @@
 const mockDeals = [
   {
     id: "1",
-    image: "https://i.etsystatic.com/12345678/r/il/abcd1234/1234567890/il_794xN.1234567890_abcd2.jpg",
+    image: "https://www.ikea.com/th/th/images/products/pjaetteryd-picture-the-starry-night-june-1889__1237251_pe917880_s5.jpg?f=xl",
     images: [
       "https://i.etsystatic.com/12345678/r/il/abcd1234/1234567890/il_794xN.1234567890_abcd2.jpg",
       "https://i.etsystatic.com/12345678/r/il/abcd1234/1234567890/il_794xN.1234567890_abcd2_2.jpg",

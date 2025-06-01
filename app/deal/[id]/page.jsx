@@ -81,6 +81,7 @@ export default function DealDetailPage(props) {
         <div className="mb-2 font-bold text-sm text-gray-700">Add your personalization</div>
         <textarea className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 transition mb-4" rows={3} placeholder="Please leave us your personalization details..." maxLength={1024} value={personal} onChange={e => setPersonal(e.target.value)} />
         <button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-3 rounded-lg font-semibold transition shadow" onClick={handleAddToCart}>Add to cart</button>
+        <a href={`/camera?img=${encodeURIComponent(deal.image)}`} className="w-full block mt-3 bg-green-600 hover:bg-green-700 text-white text-lg py-3 rounded-lg font-semibold text-center transition shadow">ทดลองการใช้งานจริง</a>
       </div>
     </div>
   );
