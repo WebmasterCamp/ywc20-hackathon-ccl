@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Navbar() {
   return (
-    <nav className="bg-gray-200 px-8 py-3 flex items-center justify-between shadow">
+    <nav className="bg-gray-200 px-8 py-3 flex items-center justify-between shadow container">
       {/* โลโก้ */}
       <div className="font-bold text-xl text-gray-800">Artco</div>
       
