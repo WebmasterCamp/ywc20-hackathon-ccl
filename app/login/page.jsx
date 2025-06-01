@@ -9,13 +9,6 @@ const LoginPage = () => {
         <form>
           <div className="mb-4">
             <input
-              type="text"
-              placeholder="ชื่อ"
-              className="w-full px-4 py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg font-medium transition"
-            />
-          </div>
-          <div className="mb-4">
-            <input
               type="email"
               placeholder="อีเมล์"
               className="w-full px-4 py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg font-medium transition"
