@@ -17,10 +17,11 @@ export default function Navbar() {
             </ul>
 
             {/* ปุ่มเข้าสู่ระบบ */}
-            <Link href="/login" legacyBehavior>
-                <a className="bg-white border border-blue-500 text-blue-500 px-5 py-2 rounded-full hover:bg-blue-500 hover:text-white transition">
-                    เข้าสู่ระบบ
-                </a>
+            <Link
+                href="/login"
+                className="bg-white border border-blue-500 text-blue-500 px-5 py-2 rounded-full hover:bg-blue-500 hover:text-white transition"
+            >
+                เข้าสู่ระบบ
             </Link>
         </nav>
     )
