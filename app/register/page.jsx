@@ -37,11 +37,14 @@ const RegisterPage = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-4 rounded-lg font-semibold transition"
+            className="w-full bg-orange-500 hover:bg-orange-700 text-white text-lg py-4 rounded-lg font-semibold transition"
           >
             สมัครสมาชิก
           </button>
         </form>
+        <div className="mt-6 text-center text-gray-500 text-sm">
+          มีบัญชีอยู่แล้ว? <a href="/login" className="text-orange-500 font-semibold hover:underline">เข้าสู่ระบบ</a>
+        </div>
       </div>
     </div>
   )
