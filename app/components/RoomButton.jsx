@@ -3,19 +3,21 @@ import Link from 'next/link';
 
 const RoomButton = () => {
   return (
-    <div className="relative mt-4 sm:mt-6 md:mt-8 lg:mt-10 mx-4 sm:mx-6 md:mx-8 lg:mx-10 flex justify-center items-center h-[30vh] sm:h-[40vh] md:h-[50vh] lg:h-[60vh] w-[calc(100%-2rem)] sm:w-[calc(100%-3rem)] md:w-[calc(100%-4rem)] lg:w-[calc(100%-5rem)] rounded-xl overflow-hidden shadow-lg">
-      <div className="relative w-full h-full">
-        <Image 
-          src="/Home/banner.png" 
+    <div className="relative flex justify-center items-center w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
+      <Image 
+          src="/images/background-room.png" 
           alt="banner background" 
           fill 
           className="object-cover object-center" 
           priority 
         />
+      <div className='absolute inset-0 flex flex-col mt-15 justify-start items-center'>
+        <h1 className='text-4xl font-bold text-[#333333] mb-2 text-5xl'>ห้องโถงของคุณ</h1>
+        <p className='text-[#333333] text-2xl'>พื้นที่สร้างคอมมูนิตี้</p>
       </div>
-      <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/30">
-        <Link href="/room" className="transform hover:scale-105 transition-transform duration-200">
-          <button className="bg-orange-500 text-white px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-full font-bold text-base sm:text-lg md:text-xl lg:text-2xl shadow-xl transition-all duration-200 border-2 border-white hover:border-orange-300">
+      <div className="absolute inset-0 flex flex-col justify-end items-center">
+        <Link href="/room" className="transform hover:scale-104 transition-transform duration-200">
+          <button className="cursor-pointer bg-orange-500 text-white px-8 py-3 mb-10 rounded-full text-md shadow-xl transition-all duration-200 hover:border-orange-300">
             เข้าชมห้องโถง
           </button>
         </Link>

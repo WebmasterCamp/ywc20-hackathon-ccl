@@ -65,8 +65,7 @@ const RegisterPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-2 sm:px-4">
       <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-10 w-full max-w-sm sm:max-w-md flex flex-col gap-4">
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 text-center">Register</h1>
-        <p className="text-gray-400 mb-6 sm:mb-8 text-center">สมัครสมาชิก</p>
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 sm:mb-8 text-center">สมัครสมาชิก</h1>
         {error && (
           <div className="mb-2 sm:mb-4 p-3 bg-red-100 text-red-700 rounded-lg text-sm sm:text-base text-center">
             {error}
@@ -80,7 +79,7 @@ const RegisterPage = () => {
               placeholder="ชื่อ (ภาษาไทยหรืออังกฤษ)"
               value={form.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 sm:py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-lg font-medium transition"
+              className="w-full px-4 py-3 sm:py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-md font-medium transition"
             />
           </div>
           <div>
@@ -90,7 +89,7 @@ const RegisterPage = () => {
               placeholder="อีเมล (เช่น ทดสอบ@ทดสอบ.ไทย)"
               value={form.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 sm:py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-lg font-medium transition"
+              className="w-full px-4 py-3 sm:py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-md font-medium transition"
             />
           </div>
           <div>
@@ -100,7 +99,7 @@ const RegisterPage = () => {
               placeholder="รหัสผ่าน (ภาษาไทยหรืออังกฤษ)"
               value={form.password}
               onChange={handleChange}
-              className="w-full px-4 py-3 sm:py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-lg font-medium transition"
+              className="w-full px-4 py-3 sm:py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-md font-medium transition"
             />
           </div>
           <div>
@@ -110,12 +109,12 @@ const RegisterPage = () => {
               placeholder="ยืนยันรหัสผ่าน"
               value={form.confirm}
               onChange={handleChange}
-              className="w-full px-4 py-3 sm:py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-lg font-medium transition"
+              className="w-full px-4 py-3 sm:py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-md font-medium transition"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-orange-500 hover:bg-orange-700 text-white text-base sm:text-lg py-3 sm:py-4 rounded-lg font-semibold transition"
+            className="w-full bg-orange-500 hover:bg-orange-700 text-white text-base sm:text-md py-3 sm:py-4 rounded-lg font-semibold transition"
           >
             สมัครสมาชิก
           </button>

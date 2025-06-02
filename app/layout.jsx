@@ -14,6 +14,9 @@ const prompt = Prompt({
 export const metadata = {
   title: "Artco",
   description: "Artco is a platform for artists",
+  icons: {
+    icon: "/artco-icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -14,9 +14,11 @@ export default function Navbar({ value, onSearch }) {
     return (
         <nav className="bg-white px-4 sm:px-8 py-3 flex items-center justify-between shadow w-full relative z-20">
             {/* โลโก้ + icon */}
-            <div className="flex items-center gap-2 flex-shrink-0">
-                <img src="/Navbar/Group 209.jpg" alt="Artco Logo" className="h-10 sm:h-14 w-auto" />
-            </div>
+            <Link href="/">
+                <div className="flex items-center gap-2 flex-shrink-0">
+                    <img src="/Navbar/Group 209.jpg" alt="Artco Logo" className="h-10 sm:h-14 w-auto" />
+                </div>
+            </Link>
 
             {/* Hamburger (mobile) */}
             <button
@@ -30,21 +32,21 @@ export default function Navbar({ value, onSearch }) {
             </button>
 
             {/* เมนูนำทาง (desktop) */}
-            <ul className="hidden sm:flex gap-8 text-lg font-medium text-gray-700">
+            <ul className="hidden sm:flex gap-8 text-md font-medium text-gray-700">
                 <li className="hover:text-orange-500 cursor-pointer" onClick={() => router.push('/')}>หน้าหลัก</li>
                 <li className="hover:text-orange-500 cursor-pointer">เกี่ยวกับเรา</li>
             </ul>
 
             {/* ช่องค้นหา (desktop) */}
-            <div className="hidden sm:flex items-center bg-[#fcfaf5] rounded-xl px-4 py-2 w-[250px] lg:w-[350px] mx-6">
+            <div className="hidden sm:flex items-center bg-[#fcfaf5] rounded-lg px-1 w-[250px] lg:w-[350px] mx-6">
                 <Search value={value} onSearch={onSearch} className="bg-transparent outline-none flex-1 text-gray-700 placeholder-gray-400"/>
             </div>
 
             {/* ปุ่มกลมสีส้มขวาสุด + ตะกร้า (desktop) */}
-            <div className="hidden sm:flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-4">
                 {/* ปุ่มตะกร้า */}
                 <Link href="/cart" className="relative">
-                    <button className="w-11 h-11 rounded-full bg-white border border-orange-500 flex items-center justify-center text-orange-500 text-xl shadow hover:bg-orange-100 transition">
+                    <button className="cursor-pointer w-10 h-10 rounded-full bg-white border border-orange-500 flex items-center justify-center text-orange-500 text-xl shadow hover:bg-orange-100 transition">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437m0 0l1.7 6.385c.138.518.602.88 1.14.88h9.246c.538 0 1.002-.362 1.14-.88l1.7-6.385m-15.396 0h15.396M6.75 21a.75.75 0 100-1.5.75.75 0 000 1.5zm10.5 0a.75.75 0 100-1.5.75.75 0 000 1.5z" />
                         </svg>
@@ -55,10 +57,10 @@ export default function Navbar({ value, onSearch }) {
                 </Link>
                 {/* ปุ่ม Login */}
                 <button
-                    className="w-24 h-11 rounded-full bg-orange-500 flex items-center justify-center text-white text-base font-semibold shadow hover:bg-orange-400 transition"
+                    className="cursor-pointer px-6 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white text-sm font-semibold shadow hover:bg-orange-400 transition"
                     onClick={() => router.push('/login')}
                 >
-                    Login
+                    เข้าสู่ระบบ
                 </button>
             </div>
 
