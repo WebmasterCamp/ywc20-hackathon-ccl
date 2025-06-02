@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Navbar from '../components/Navbar';
 
 const LoginPage = () => {
   const router = useRouter()
@@ -22,41 +23,38 @@ const LoginPage = () => {
     e.preventDefault()
     setError('')
 
-    // Validate email
     if (!formData.email) {
       setError('กรุณากรอกอีเมล')
       return
     }
-
     if (!isValidThaiEmail(formData.email)) {
       setError('กรุณากรอกอีเมลให้ถูกต้อง')
       return
     }
-
     if (!formData.password) {
       setError('กรุณากรอกรหัสผ่าน')
       return
     }
 
-    // Simple mock authentication
-    if (formData.email && formData.password) {
-      // Store auth data in localStorage
-      // In a real production app, you would want to:
-      // 1. Store a JWT token instead of email
-      // 2. Implement proper session management
-      // 3. Consider using HTTP-only cookies for better security
-      localStorage.setItem('auth', JSON.stringify({
-        email: formData.email,
-        isLoggedIn: true,
-        loginTime: new Date().toISOString(),
-        name: "นายไทย"
-      }))
-
-      console.log('Login successful:', formData.email)
-
-      // Redirect to home page
-      router.push('/')
+    // ดึง user ที่สมัครไว้จาก localStorage
+    const user = JSON.parse(localStorage.getItem('user') || '{}')
+    if (!user.email || !user.password) {
+      setError('ไม่พบข้อมูลผู้ใช้ กรุณาสมัครสมาชิกก่อน')
+      return
     }
+    if (formData.email !== user.email || formData.password !== user.password) {
+      setError('อีเมลหรือรหัสผ่านไม่ถูกต้อง')
+      return
+    }
+
+    // Login สำเร็จ
+    localStorage.setItem('auth', JSON.stringify({
+      email: user.email,
+      isLoggedIn: true,
+      loginTime: new Date().toISOString(),
+      name: user.name
+    }))
+    router.push('/')
   }
 
   const handleChange = (e) => {
@@ -68,52 +66,52 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white rounded-xl shadow-lg p-10 w-full max-w-md">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Login</h1>
-        <p className="text-gray-400 mb-8">เข้าสู่ระบบ</p>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-2 sm:px-4">
+      <Navbar/>
+      <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-10 w-full max-w-sm sm:max-w-md flex flex-col gap-4">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 text-center">Login</h1>
+        <p className="text-gray-400 mb-6 sm:mb-8 text-center">เข้าสู่ระบบ</p>
         {error && (
-          <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg">
+          <div className="mb-2 sm:mb-4 p-3 bg-red-100 text-red-700 rounded-lg text-sm sm:text-base text-center">
             {error}
           </div>
         )}
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <div>
             <input
               type="text"
               name="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="อีเมล (เช่น ทดสอบ@ทดสอบ.ไทย)"
-              className="w-full px-4 py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg font-medium transition"
+              className="w-full px-4 py-3 sm:py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-lg font-medium transition"
             />
           </div>
-          <div className="mb-8">
+          <div>
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
               placeholder="รหัสผ่าน"
-              className="w-full px-4 py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg font-medium transition"
+              className="w-full px-4 py-3 sm:py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-lg font-medium transition"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-orange-500 hover:bg-orange-700 text-white text-lg py-4 rounded-lg font-semibold transition"
+            className="w-full bg-orange-500 hover:bg-orange-700 text-white text-base sm:text-lg py-3 sm:py-4 rounded-lg font-semibold transition"
           >
             เข้าสู่ระบบ
           </button>
         </form>
-
         {/* ตัวอย่างการใช้งาน */}
-        <div className="mt-6 p-3 bg-blue-50 rounded-lg text-sm text-gray-600">
+        <div className="mt-4 sm:mt-6 p-2 sm:p-3 bg-blue-50 rounded-lg text-xs sm:text-sm text-gray-600">
           <p className="font-semibold mb-1">ตัวอย่างอีเมลที่รองรับ:</p>
           <p>• ทดสอบ@ทดสอบ.ไทย</p>
           <p>• test@example.com</p>
           <p>• ผู้ใช้@บริษัท.co.th</p>
         </div>
-        <div className="mt-6 text-center text-gray-500 text-sm">
+        <div className="mt-4 sm:mt-6 text-center text-gray-500 text-xs sm:text-sm">
           ยังไม่มีบัญชี? <a href="/register" className="text-orange-500 font-semibold hover:underline">สมัครสมาชิก</a>
         </div>
       </div>

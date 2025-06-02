@@ -1,28 +1,21 @@
 'use client';
-import Navbar from "./components/Navbar";
 import RoomButton from "./components/RoomButton";
 import Search from "./components/Search";
 import DealCard from "./components/DealCard";
 import mockDeals from "./components/mockDeals";
 import Link from "next/link";
-import { useState } from "react";
 import Banner from "./components/Banner";
 
 export default function Home() {
-  const [search, setSearch] = useState("");
-  const deals = mockDeals.filter(deal => deal.title.toLowerCase().includes(search.toLowerCase()));
   return (
     <div className="bg-white container mx-auto">
-
       <Banner/>
       <RoomButton/>
       {/* Section ดีลสินค้า */}
       <div className="mt-8">
         <h2 className="text-2xl font-bold mb-4 ml-4">Today's big deals</h2>
         <div className="flex flex-wrap gap-6 justify-center">
-          {deals.length === 0 ? (
-            <div className="text-gray-400 text-lg py-12">ไม่พบสินค้าที่ค้นหา</div>
-          ) : deals.map((deal) => (
+          {mockDeals.map((deal) => (
             <Link key={deal.id} href={`/deal/${deal.id}`} className="hover:scale-105 transition-transform">
               <DealCard {...deal} />
             </Link>
@@ -34,5 +27,5 @@ export default function Home() {
         <Link href="/checkout" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold">ไปชำระเงิน</Link>
       </div> */}
     </div>
-  );
+  )
 }
