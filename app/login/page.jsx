@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Navbar from '../components/Navbar';
 
 const LoginPage = () => {
   const router = useRouter()
@@ -66,6 +67,7 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-2 sm:px-4">
+      <Navbar/>
       <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-10 w-full max-w-sm sm:max-w-md flex flex-col gap-4">
         <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 text-center">Login</h1>
         <p className="text-gray-400 mb-6 sm:mb-8 text-center">เข้าสู่ระบบ</p>
