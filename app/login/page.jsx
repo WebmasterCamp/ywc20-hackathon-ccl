@@ -22,41 +22,38 @@ const LoginPage = () => {
     e.preventDefault()
     setError('')
 
-    // Validate email
     if (!formData.email) {
       setError('กรุณากรอกอีเมล')
       return
     }
-
     if (!isValidThaiEmail(formData.email)) {
       setError('กรุณากรอกอีเมลให้ถูกต้อง')
       return
     }
-
     if (!formData.password) {
       setError('กรุณากรอกรหัสผ่าน')
       return
     }
 
-    // Simple mock authentication
-    if (formData.email && formData.password) {
-      // Store auth data in localStorage
-      // In a real production app, you would want to:
-      // 1. Store a JWT token instead of email
-      // 2. Implement proper session management
-      // 3. Consider using HTTP-only cookies for better security
-      localStorage.setItem('auth', JSON.stringify({
-        email: formData.email,
-        isLoggedIn: true,
-        loginTime: new Date().toISOString(),
-        name: "นายไทย"
-      }))
-
-      console.log('Login successful:', formData.email)
-
-      // Redirect to home page
-      router.push('/')
+    // ดึง user ที่สมัครไว้จาก localStorage
+    const user = JSON.parse(localStorage.getItem('user') || '{}')
+    if (!user.email || !user.password) {
+      setError('ไม่พบข้อมูลผู้ใช้ กรุณาสมัครสมาชิกก่อน')
+      return
     }
+    if (formData.email !== user.email || formData.password !== user.password) {
+      setError('อีเมลหรือรหัสผ่านไม่ถูกต้อง')
+      return
+    }
+
+    // Login สำเร็จ
+    localStorage.setItem('auth', JSON.stringify({
+      email: user.email,
+      isLoggedIn: true,
+      loginTime: new Date().toISOString(),
+      name: user.name
+    }))
+    router.push('/')
   }
 
   const handleChange = (e) => {

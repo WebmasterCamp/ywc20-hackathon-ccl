@@ -8,12 +8,10 @@ import Link from "next/link";
 import { useState } from "react";
 import Banner from "./components/Banner";
 
-export default function Home() {
-  const [search, setSearch] = useState("");
+export default function Home({ search = "" }) {
   const deals = mockDeals.filter(deal => deal.title.toLowerCase().includes(search.toLowerCase()));
   return (
     <div className="bg-white container mx-auto">
-
       <Banner/>
       <RoomButton/>
       {/* Section ดีลสินค้า */}
@@ -34,5 +32,5 @@ export default function Home() {
         <Link href="/checkout" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold">ไปชำระเงิน</Link>
       </div> */}
     </div>
-  );
+  )
 }

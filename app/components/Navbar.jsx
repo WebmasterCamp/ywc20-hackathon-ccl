@@ -5,7 +5,7 @@ import { useCart } from './CartContext';
 import Search from './Search';
 import { useRouter } from 'next/navigation';
 
-export default function Navbar({ onSearch }) {
+export default function Navbar({ value, onSearch }) {
     const router = useRouter();
     const { cart } = useCart?.() || { cart: [] };
     const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
@@ -30,7 +30,7 @@ export default function Navbar({ onSearch }) {
 
             {/* ช่องค้นหา */}
             <div className="flex items-center bg-[#fcfaf5] rounded-xl px-4 py-2 w-[350px] mx-6">
-                <Search onSearch={onSearch} className="bg-transparent outline-none flex-1 text-gray-700 placeholder-gray-400"/>
+                <Search value={value} onSearch={onSearch} className="bg-transparent outline-none flex-1 text-gray-700 placeholder-gray-400"/>
             </div>
 
             {/* ปุ่มกลมสีส้มขวาสุด + ตะกร้า */}
