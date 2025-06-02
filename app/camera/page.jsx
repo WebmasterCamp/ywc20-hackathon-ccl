@@ -113,7 +113,7 @@ export default function CameraPage() {
           <button onClick={handleReset} className="mt-2 md:mt-0 bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg font-semibold shadow flex items-center gap-1"><span className="material-symbols-outlined text-base">refresh</span>รีเซ็ต</button>
         </div>
       </div>
-      <a href="/" className="fixed top-4 left-4 z-20 bg-white/80 rounded-full px-4 py-2 text-gray-700 font-semibold shadow flex items-center gap-2"><span className="material-symbols-outlined">arrow_back</span>กลับ</a>
+      <a href="/" className="fixed top-20 left-4 z-20 bg-white/80 rounded-full px-4 py-2 text-gray-700 font-semibold shadow flex items-center gap-2"><span className="material-symbols-outlined">Back</span></a>
     </div>
   );
 } 
