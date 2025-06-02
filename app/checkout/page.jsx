@@ -2,7 +2,6 @@
 import { useCart } from "../components/CartContext";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Navbar from "../components/Navbar";
 
 export default function CheckoutPage() {
   const { cart, clearCart } = useCart();
@@ -22,7 +21,6 @@ export default function CheckoutPage() {
 
   return (
     <div className="max-w-2xl mx-auto py-8 px-2 md:px-0">
-      <Navbar/>
       <h1 className="text-2xl font-bold mb-6">ชำระเงิน</h1>
       <form className="bg-white rounded-xl shadow p-6 flex flex-col gap-4" onSubmit={handleSubmit}>
         <div>
