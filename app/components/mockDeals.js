@@ -76,23 +76,6 @@ const mockDeals = [
       size: ["XS", "S", "M", "L", "XL"]
     }
   },
-  {
-    id: "5",
-    image: "https://i.etsystatic.com/12345678/r/il/abcd1234/1234567890/il_794xN.1234567890_abcd5.jpg",
-    images: [
-      "https://i.etsystatic.com/12345678/r/il/abcd1234/1234567890/il_794xN.1234567890_abcd5.jpg"
-    ],
-    title: "Blown Glass Flowers, All Birth Months Covered",
-    price: 150.11,
-    oldPrice: 306.35,
-    discount: 51,
-    rating: 4.9,
-    seller: "GlassBlossom",
-    description: "Handmade blown glass flowers, available for all birth months. Perfect for gifts and home decor.",
-    options: {
-      month: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    }
-  }
 ];
 
 export default mockDeals; 

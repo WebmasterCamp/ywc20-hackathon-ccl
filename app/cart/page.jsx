@@ -21,7 +21,7 @@ export default function CartPage() {
                   <div className="font-semibold text-lg mb-1">{item.title}</div>
                   <div className="text-gray-500 text-sm mb-1">{Object.entries(item.options).map(([k, v]) => v && (<span key={k} className="mr-2">{k}: <span className="font-medium">{v}</span></span>))}</div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-green-700 font-bold">THB {(item.price * item.qty).toLocaleString()}</span>
+                    <span className="text-orange-500 font-bold">THB {(item.price * item.qty).toLocaleString()}</span>
                     <span className="text-gray-400 text-xs">(ชิ้นละ {item.price})</span>
                   </div>
                   <div className="flex items-center gap-2 mt-2">
@@ -33,10 +33,10 @@ export default function CartPage() {
             ))}
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 border-t pt-4">
-            <div className="text-xl font-bold">รวมทั้งหมด: <span className="text-green-700">THB {total.toLocaleString()}</span></div>
+            <div className="text-xl font-bold">รวมทั้งหมด: <span className="text-orange-500">THB {total.toLocaleString()}</span></div>
             <div className="flex gap-2">
               <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-lg font-semibold" onClick={clearCart}>ล้างตะกร้า</button>
-              <Link href="/checkout" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold">ไปชำระเงิน</Link>
+              <Link href="/checkout" className="bg-orange-500 hover:bg-orange-800 text-white px-6 py-2 rounded-lg font-semibold">ไปชำระเงิน</Link>
             </div>
           </div>
         </>
