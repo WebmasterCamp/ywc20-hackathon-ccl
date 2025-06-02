@@ -3,8 +3,10 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import Shop from '../components/Shop';
+import { useRouter } from 'next/navigation';
 
 const RoomPage = () => {
+  const router = useRouter();
   const [scrollProgress, setScrollProgress] = useState(0);
   const [characterPosition, setCharacterPosition] = useState(-20); // Center position
   const [isSelectedShop, setIsSelectedShop] = useState(false);
@@ -97,6 +99,16 @@ const RoomPage = () => {
   return (
     <>
       <div className="relative w-full min-h-screen overflow-x-hidden bg-[#fcdbc8]">
+        {/* Back Button */}
+        <button 
+          onClick={() => router.back()}
+          className="cursor-pointer fixed top-25 left-6 z-50 bg-white/80 hover:bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-105"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+          </svg>
+        </button>
+
         {/* Background Room */}
         <div className="fixed top-0 left-0 w-full h-screen bg-gradient-to-b from-[#fbf8f2] to-[#fcdbc8]" />
 

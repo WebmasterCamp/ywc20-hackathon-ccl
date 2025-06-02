@@ -1,7 +1,6 @@
 "use client";
 import { useCart } from "../components/CartContext";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
 
 export default function CartPage() {
   const { cart, updateQty, removeFromCart, clearCart } = useCart();
@@ -9,7 +8,6 @@ export default function CartPage() {
 
   return (
     <div className="max-w-3xl mx-auto py-8 px-2 md:px-0">
-      <Navbar/>
       <h1 className="text-2xl font-bold mb-6">ตะกร้าสินค้า</h1>
       {cart.length === 0 ? (
         <div className="text-center text-gray-500">ไม่มีสินค้าในตะกร้า <Link href="/" className="text-blue-600 underline">เลือกซื้อสินค้า</Link></div>
