@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Navbar from '../components/Navbar';
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -63,64 +64,65 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white rounded-xl shadow-lg p-10 w-full max-w-md">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Register</h1>
-        <p className="text-gray-400 mb-8">สมัครสมาชิก</p>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-2 sm:px-4">
+      <Navbar/>
+      <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 md:p-10 w-full max-w-sm sm:max-w-md flex flex-col gap-4">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 text-center">Register</h1>
+        <p className="text-gray-400 mb-6 sm:mb-8 text-center">สมัครสมาชิก</p>
         {error && (
-          <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg">
+          <div className="mb-2 sm:mb-4 p-3 bg-red-100 text-red-700 rounded-lg text-sm sm:text-base text-center">
             {error}
           </div>
         )}
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <div>
             <input
               type="text"
               name="name"
               placeholder="ชื่อ (ภาษาไทยหรืออังกฤษ)"
               value={form.name}
               onChange={handleChange}
-              className="w-full px-4 py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg font-medium transition"
+              className="w-full px-4 py-3 sm:py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-lg font-medium transition"
             />
           </div>
-          <div className="mb-4">
+          <div>
             <input
               type="text"
               name="email"
               placeholder="อีเมล (เช่น ทดสอบ@ทดสอบ.ไทย)"
               value={form.email}
               onChange={handleChange}
-              className="w-full px-4 py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg font-medium transition"
+              className="w-full px-4 py-3 sm:py-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-lg font-medium transition"
             />
           </div>
-          <div className="mb-4">
+          <div>
             <input
               type="password"
               name="password"
               placeholder="รหัสผ่าน (ภาษาไทยหรืออังกฤษ)"
               value={form.password}
               onChange={handleChange}
-              className="w-full px-4 py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg font-medium transition"
+              className="w-full px-4 py-3 sm:py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-lg font-medium transition"
             />
           </div>
-          <div className="mb-8">
+          <div>
             <input
               type="password"
               name="confirm"
               placeholder="ยืนยันรหัสผ่าน"
               value={form.confirm}
               onChange={handleChange}
-              className="w-full px-4 py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-lg font-medium transition"
+              className="w-full px-4 py-3 sm:py-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base sm:text-lg font-medium transition"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-orange-500 hover:bg-orange-700 text-white text-lg py-4 rounded-lg font-semibold transition"
+            className="w-full bg-orange-500 hover:bg-orange-700 text-white text-base sm:text-lg py-3 sm:py-4 rounded-lg font-semibold transition"
           >
             สมัครสมาชิก
           </button>
         </form>
-        <div className="mt-6 text-center text-gray-500 text-sm">
+        <div className="mt-4 sm:mt-6 text-center text-gray-500 text-xs sm:text-sm">
           มีบัญชีอยู่แล้ว? <a href="/login" className="text-orange-500 font-semibold hover:underline">เข้าสู่ระบบ</a>
         </div>
       </div>
