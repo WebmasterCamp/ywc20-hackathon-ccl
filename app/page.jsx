@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="bg-white container mx-auto">
       <Banner/>
-      <RoomButton/>
+      <RoomButton className="px-10"/>
       {/* Section ดีลสินค้า */}
       <div className="mt-8">
         <h2 className="text-2xl font-bold mb-4 ml-4">Today's big deals</h2>
