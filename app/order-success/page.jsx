@@ -8,7 +8,7 @@ export default function OrderSuccessPage() {
         <div className="text-2xl font-bold mb-2">สั่งซื้อสำเร็จ!</div>
         <div className="text-gray-600 mb-6 text-center">ขอบคุณสำหรับการสั่งซื้อของคุณ<br />ระบบได้รับออเดอร์เรียบร้อยแล้ว</div>
         <Link href="/" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold mb-2 w-full text-center">กลับสู่หน้าแรก</Link>
-        <Link href="/cart" className="text-blue-600 underline w-full text-center">ดูตะกร้าสินค้า</Link>
+        <Link href="/cart" className="text-orange-500 underline w-full text-center">ดูตะกร้าสินค้า</Link>
       </div>
     </div>
   );
